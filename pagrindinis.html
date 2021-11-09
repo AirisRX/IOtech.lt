@@ -12,6 +12,20 @@
 
     <body>
     <header>
+        <script>
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * max);
+            }
+
+            function ikrepseli(x) {
+                console.log(x.getElementsByTagName('a')[0].outerText)
+                x.className = "hidden"
+                if (getRandomInt(5) == 0) {
+                    alert("You have are virus")
+                }
+                // alert("I krepseli")
+            }
+        </script>
 
         <img src="images/interface/logo.png" alt="IOtech" title="IOtech.lt - kompiuterių technikos parduotuvė">
 
@@ -26,11 +40,25 @@
         <h1>Rekomenduojami</h1>
         <div class="items">
             <!-- <ul> -->
-                <a>Dell</a>
-                <a>Lenovo</a>
-                <a>HP</a>
-                <a>Razer</a>
-                <a>Asus</a>
+                <div class="item" onmouseover="ikrepseli(this)"> 
+                    <img src="images/products/dell-latitude-7410.jpg">
+                    <a>Dell</a>
+                    <a>2000 euru</a>
+                </div>
+                
+
+                    <div class="item" onmouseover="ikrepseli(this)">
+                        <a>Lenovo</a>
+                    </div>
+                    <div class="item" onmouseover="ikrepseli(this)">
+                        <a>HP</a>
+                    </div>
+                    <div class="item" onmouseover="ikrepseli(this)">
+                        <a>Razer</a>
+                    </div>
+                    <div class="item" onmouseover="ikrepseli(this)">
+                        <a>Asus</a>
+                    </div>
             <!-- </ul> -->
         </div>
         <hr>
