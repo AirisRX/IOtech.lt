@@ -1,0 +1,19 @@
+h1 {
+    text-align:center;
+}
+
+body {
+    background: url("images/background.jpg");
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.about {
+    font-weight: bold;
+    color:black;
+}
+
+.items {
+    display: flex;
+    justify-content: space-evenly;
+}
+

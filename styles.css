@@ -1,0 +1,23 @@
+h1 {
+  text-align: center;
+}
+
+body {
+  background: url("images/background.jpg");
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.about {
+  font-weight: bold;
+  color: black;
+}
+
+.items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+/*# sourceMappingURL=styles.css.map */
