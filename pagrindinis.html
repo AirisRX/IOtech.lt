@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="lt">
 
 <html>
     
@@ -13,17 +14,9 @@
     <body>
     <header>
         <script>
-            function getRandomInt(max) {
-                return Math.floor(Math.random() * max);
-            }
-
-            function ikrepseli(x) {
+            function krepselis(x) {
                 console.log(x.getElementsByTagName('a')[0].outerText)
-                x.className = "hidden"
-                if (getRandomInt(5) == 0) {
-                    alert("You have are virus")
-                }
-                // alert("I krepseli")
+                alert("Prekė pridėta į krepšelį.")
             }
         </script>
 
@@ -40,23 +33,22 @@
         <h1>Rekomenduojami</h1>
         <div class="items">
             <!-- <ul> -->
-                <div class="item" onmouseover="ikrepseli(this)"> 
+                <div class="item" onclick="krepselis(this)"> 
                     <img src="images/products/dell-latitude-7410.jpg">
                     <a>Dell</a>
                     <a>2000 euru</a>
                 </div>
-                
 
-                    <div class="item" onmouseover="ikrepseli(this)">
+                    <div class="item" onclick="krepselis(this)">
                         <a>Lenovo</a>
                     </div>
-                    <div class="item" onmouseover="ikrepseli(this)">
+                    <div class="item" onclick="krepselis(this)">
                         <a>HP</a>
                     </div>
-                    <div class="item" onmouseover="ikrepseli(this)">
+                    <div class="item" onclick="krepselis(this)">
                         <a>Razer</a>
                     </div>
-                    <div class="item" onmouseover="ikrepseli(this)">
+                    <div class="item" onclick="krepselis(this)">
                         <a>Asus</a>
                     </div>
             <!-- </ul> -->
