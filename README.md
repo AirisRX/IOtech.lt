@@ -10,7 +10,7 @@ Planas
 7. Krepšelis // Nerijus
 8. Sudėti produktus į pagrindinio puslapio kategorijas // Airidas
 9. Sukurti puslapius kiekvienam produktui + padaryti template paprastesniam kūrimui // Airidas
-10. Padaryti, kad paspaudos ant logo nukreiptų į pagrindinį puslapį.
+10. Padaryti, kad paspaudus ant logo nukreiptų į pagrindinį puslapį.
 
 Kategorijos:
 
