@@ -9,7 +9,8 @@ Planas
 6. Surasti generic produktus // Airidas
 7. Krepšelis // Nerijus
 8. Sudėti produktus į pagrindinio puslapio kategorijas // Airidas
-9. Sukurti puslapius kiekvienam produktui // Airidas 
+9. Sukurti puslapius kiekvienam produktui + padaryti template paprastesniam kūrimui // Airidas
+10. Padaryti, kad paspaudos ant logo nukreiptų į pagrindinį puslapį.
 
 Kategorijos:
 
@@ -17,3 +18,5 @@ Kompiuterių dalys
 Kompiuteriai: nešiojamieji ir pre-build
 Konsolės ir jų priedai
 Priedai, aksesuarai
+
+NERODO REKLAMOS NUOTRAUKOS - SUTVARKYTI

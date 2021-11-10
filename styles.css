@@ -1,15 +1,23 @@
-h1 {
-  text-align: center;
+body {
+  background-image: url("images/interface/background.jpg");
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-body {
-  background: url("images/background.jpg");
-  font-family: 'Ubuntu', sans-serif;
+.logo {
+  width: auto;
+  height: 200px;
+}
+
+h1 {
+  text-align: center;
 }
 
 .about {
   font-weight: bold;
   color: black;
+  text-align: center;
+  margin: 5px;
 }
 
 .items {
@@ -23,11 +31,7 @@ body {
           justify-content: space-evenly;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  gap: 0px;
-}
-
-.hidden {
-  display: none;
+  margin: 25px;
 }
 
 .item {
@@ -35,6 +39,7 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   gap: 0px;
+  border-radius: 5px;
   background-color: greenyellow;
 }
 
@@ -47,6 +52,15 @@ body {
 .item img {
   width: auto;
   height: 200px;
-  border-radius: 10px;
+  border-radius: 5px;
+}
+
+.reklama {
+  width: auto;
+  height: 200px;
+}
+
+.button {
+  text-align: center;
 }
 /*# sourceMappingURL=styles.css.map */

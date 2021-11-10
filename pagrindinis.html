@@ -6,6 +6,8 @@
     <head>
         <title>IOtech.lt - kompiuterių technikos parduotuvė</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="images/interface/favicon.ico">
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
@@ -20,43 +22,46 @@
             }
         </script>
 
-        <img src="images/interface/logo.png" alt="IOtech" title="IOtech.lt - kompiuterių technikos parduotuvė">
-
+        <img class="logo" src="images/interface/logo.png" alt="IOtech" title="IOtech.lt - kompiuterių technikos parduotuvė">
 
         <hr>
         <h1>Nauji produktai</h1>
         <hr>
-        <h1>Reklama</h1>
+        <img class="reklama" src="images/interface/reklama.jpg" alt="Reklama" title="Paspauskite, norint susisiekti" href="mailto:airidas.rupsas@ku.lt">
         <hr>
         <h1>Nuolaidos, išpardavimai</h1>
         <hr>
         <h1>Rekomenduojami</h1>
         <div class="items">
-            <!-- <ul> -->
-                <div class="item" onclick="krepselis(this)"> 
+
+                <div class="item"> 
                     <img src="images/products/dell-latitude-7410.jpg">
-                    <a>Dell</a>
+                    <a href="">Dell</a>
                     <a>2000 euru</a>
+                    <button class="button" onclick="krepselis(this)">Į krepšelį</button>
                 </div>
 
-                    <div class="item" onclick="krepselis(this)">
-                        <a>Lenovo</a>
-                    </div>
-                    <div class="item" onclick="krepselis(this)">
-                        <a>HP</a>
-                    </div>
-                    <div class="item" onclick="krepselis(this)">
-                        <a>Razer</a>
-                    </div>
-                    <div class="item" onclick="krepselis(this)">
-                        <a>Asus</a>
-                    </div>
-            <!-- </ul> -->
+                <div class="item" onclick="krepselis(this)">
+                    <a href="">Lenovo</a>
+                </div>
+
+                <div class="item" onclick="krepselis(this)">
+                    <a href="">HP</a>
+                </div>
+
+                <div class="item" onclick="krepselis(this)">
+                    <a href="">Razer</a>
+                </div>
+
+                <div class="item" onclick="krepselis(this)">
+                    <a href="">Asus</a>
+                </div>
+
         </div>
         <hr>
-        <h1>Dienos pasiūlymai</h1>
-        <hr>
-        <p class="about"> 2021 / Airidas Rupšas / Nerijus Pocevičius</p>
+        <p class="about"> Airidas Rupšas / Nerijus Pocevičius </p>
+        <p class="about"> JNII21 </p>
+        <p class="about"> 2021 </p>
 
     </header>
     </body>
