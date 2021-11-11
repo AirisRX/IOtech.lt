@@ -12,7 +12,7 @@
 	<hr>
         <h1>Nauji produktai</h1>
         <hr>
-        <img src="/reklama.jpg" title="Paspauskite, norint susisiekti" href="mailto:airidas.rupsas@ku.lt">
+        <img class="reklama" src="reklama.jpg" alt="Reklama" title="Paspauskite, norint susisiekti" href="mailto:airidas.rupsas@ku.lt">
         <hr>
         <h1>Nuolaidos, išpardavimai</h1>
         <hr>
