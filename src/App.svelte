@@ -8,7 +8,7 @@
 
 <main>
     <div align="left">
-        <a href="/"><img class="logo" src="logo.png" alt="IOtech" title="IOtech.lt - kompiuterių technikos parduotuvė"></a>
+        <a href="/"><img class="logo" src="IOtech.png" alt="IOtech" title="IOtech.lt - kompiuterių technikos parduotuvė"></a>
     </div>
 
 	<hr>

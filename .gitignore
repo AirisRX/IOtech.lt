@@ -1,6 +1,7 @@
 /public/build/
 /.vscode/
 package-lock.json
+/logo
 
 .DS_Store
 
