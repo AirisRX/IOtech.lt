@@ -11,7 +11,11 @@
         <a href="/"><img class="logo" src="IOtech.png" alt="IOtech" title="IOtech.lt - kompiuterių technikos parduotuvė"></a>
     </div>
 
-    <div class="meniu" id="center-align">
+    <div class="reg-log">
+    <button class="reg-logbtn"><a href="/">Prisijungti/Registruotis</a></button>
+    </div>
+
+    <div class="meniu" id="meniu-align">
 
         <div class="dropdown">
             <button class="dropbtn">Kompiuterių dalys
@@ -69,9 +73,10 @@
             </div>
         </div>
 
+        <a class="a" href="/">Apie mus</a>
+
     </div>
 
-	<hr>
     <div id="center-align">
         <hr>
         <h1>Nauji produktai</h1>
@@ -158,11 +163,26 @@
   height: 50%;
 }
 
+#meniu-align {
+  margin: 20px auto;
+  width: 50%;
+  height: 50%;
+}
+
 .meniu {
     background-color: #5a5858;
     /* Galbūt pakeisti spalva ateityje. */
     overflow: hidden;
     border-radius: 10px;
+}
+
+.a {
+    float: left;
+    font-size: 18px;
+    color: #ff3e00;
+    text-align: center;
+    padding: 14px 15px;
+    text-decoration: none;
 }
 
 .dropdown {
@@ -209,6 +229,19 @@
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.reg-log {
+    color: black;
+}
+
+.reg-logbtn {
+    font-size: 18px;
+    border: groove;
+    color: #ff3e00;
+    padding: 14px 15px;
+    background-color: #5a5858;
+    margin: 0; 
 }
 
 	main {
