@@ -1,11 +1,25 @@
+<script>
+    import Auth from "$lib/auth.svelte"
+
+    let user;
+</script>
+
 <div class="meniu-align">
+    {#if user}
     <div class="reg-log">
         <button class="reg-logbtn"><a href="/">Prisijungti/Registruotis</a></button>
     </div>
+    {:else}
+        <Auth/>
+    {/if}
 
     <div class="meniu">
-
+        
         <div class="dropdown">
+            <a href="/"><img class="logo" src="IOtech.png" alt="IOtech" title="IOtech.lt - kompiuterių technikos parduotuvė"></a>
+        </div>
+        <div class="dropdown">
+            
             <button class="dropbtn">Kompiuterių dalys
             <i class="fa fa-caret-down"></i>
             </button>
@@ -150,5 +164,10 @@
     text-align: center;
     padding: 14px 15px;
     text-decoration: none;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
 }
 </style>
