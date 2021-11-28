@@ -6,7 +6,8 @@ import hashlib
 
 class Login(Resource):
     def post(self):
-        user = db.session.query(User.name, User.password, User.email, User.session).filter_by(email=request.form['email']).first()
+        data = request.get_json()
+        user = db.session.query(User.name, User.password, User.email, User.session).filter_by(email=data['email']).first()
         if not user:
             return {"message": "Wrong password or email"}, 409
         
@@ -14,7 +15,7 @@ class Login(Resource):
         salt = password[:32]
         key = password[32:]
 
-        new_key = hashlib.pbkdf2_hmac('sha256', request.form['password'].encode('utf-8'), salt, 100000)
+        new_key = hashlib.pbkdf2_hmac('sha256', data['password'].encode('utf-8'), salt, 100000)
 
         if new_key != key:
             return {"message": "Wrong password or email"}, 409
