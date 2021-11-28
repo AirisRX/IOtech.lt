@@ -13,7 +13,7 @@
     let password;
     let confirm_password;
     let passwords_match = true
-    let registered = false
+    let submit_message = null
 
     let email_problem = null
 
@@ -51,12 +51,9 @@
     }
 
     async function register() {
-        error = false
-
-        error = undefined
         console.log('xd')
         try {
-            const res = await fetch(':5000/auth/register', {
+            const res = await fetch('http://localhost:5000/auth/register', {
                 method: 'POST',
                 body: JSON.stringify({
                     email,
@@ -67,20 +64,26 @@
                     'Content-Type': 'application/json'
                 }
             })
-            if (res.ok) {
-                dispatch('success')
-                registered = true
+            const { message } = JSON.parse(await res.text())
+            if (res.status == 200) {
+                submit_message = {
+                    message,
+                    success: true
+                }
             } else {
-                error = 'An error occured'
+                submit_message = {
+                    message,
+                    success: false
+                }
             }
+            console.log(submit_message)
         } catch(err) {
             console.log(err)
-            error = 'An error occured'
         }
     }    
 </script>
 
-{#if !registered}
+
 <div class="field">
     <label class="label">Name</label>
     <div class="control has-icons-right">
@@ -131,16 +134,11 @@
   <p class="help is-danger">Passwords do not match</p>
   {/if}
   
-<div class="field is-grouped">
+<div class="field">
     <div class="control">
-      <button class="button is-success" on:click="{register}">Submit</button>
-    </div>
-    <div class="control">
-      <button class="button is-danger is-light" >Cancel</button>
+      <button class="button is-success" on:click="{register}">Register</button>
     </div>
   </div>
-{:else}
-<div class="content">
-    <p>Registered successfully, please proceed to log in.</p>
-</div>
+{#if submit_message}
+<p class="help" class:is-danger="{!submit_message['success']}" class:is-success="{submit_message['success']}">{submit_message['message']}</p>
 {/if}

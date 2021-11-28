@@ -12,16 +12,18 @@ email_regex = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)
 
 class Register(Resource):
     def post(self):
+        data = request.get_json()
+
         session_id = str(uuid4())
         salt = os.urandom(32)
-        key = hashlib.pbkdf2_hmac('sha256', request.form['password'].encode('utf-8'), salt, 100000)
+        key = hashlib.pbkdf2_hmac('sha256', data['password'].encode('utf-8'), salt, 100000)
         password = salt + key
 
-        if not re.match(email_regex, request.form['email'], re.IGNORECASE):
+        if not re.search(email_regex, data['email'], re.IGNORECASE):
             return {"message": "Invalid e-mail"}, 422
 
         try:
-            new_user = User(request.form['name'], request.form['email'], password, session_id)
+            new_user = User(data['name'], data['email'], password, session_id)
             db.session.add(new_user)
             db.session.commit()
         except exc.IntegrityError as e:
@@ -29,6 +31,6 @@ class Register(Resource):
 
         return {
             'message': "Successfully registered!",
-            'name': request.form['name'],
-            'email': request.form['email']
+            'name': data['name'],
+            'email': data['email']
         }, 200, {'Set-Cookie': f"session_id={session_id}"}
