@@ -17,7 +17,7 @@ class Register(Resource):
         key = hashlib.pbkdf2_hmac('sha256', request.form['password'].encode('utf-8'), salt, 100000)
         password = salt + key
 
-        if not re.match(email_regex, request.form['email']):
+        if not re.match(email_regex, request.form['email'], re.IGNORECASE):
             return {"message": "Invalid e-mail"}, 422
 
         try:

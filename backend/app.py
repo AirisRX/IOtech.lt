@@ -10,7 +10,7 @@ from api import Email, Login, Register, Products
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = database_uri 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-cors = CORS(app, resources={r"/*": {"origins": "*"}})
+cors = CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
 db.init_app(app)
 
