@@ -12,37 +12,21 @@
     let email;
     let password;
     let confirm_password;
-    let error;
-    let valid_email = true
     let passwords_match = true
     let registered = false
 
     let email_problem = null
-    // let name_problem = null
-
-    // function validateName() {
-    //     console.log('xd')
-    //     // name = name.replace(/[^ą-ža-zA-Z\ ]/, "")
-
-    //     if (!name.match(name_regex)) {
-    //         name_problem = "Incorrect name"
-    //     } else name_problem = null;
-    // }
 
     async function validateEmail() {
         if (!email) email_problem = null;
         else if (!!!email.match(email_regex)) {
             email_problem = "Invalid email"
-        } else if (await email_exists()) {
-            console.log('xd2')
-            email_problem = "E-mail exists"
-        } else email_problem = null;
-        return !email_problem
+        } else email_problem = await validateEmailExistence()
     }
 
-    async function email_exists() {
+    async function validateEmailExistence() {
         try {
-            const res = await fetch('/auth/email', {
+            const res = await fetch('http://localhost:5000/auth/email', {
                 method: 'POST',
                 body: JSON.stringify({
                     email,
@@ -51,15 +35,13 @@
                     'Content-Type': 'application/json'
                 }
             })
-            if (res.ok) {
-                const {message} = JSON.parse(await res.text())
+            const {message, exists} = JSON.parse(await res.text())
+            if (!res.ok || !exists) {
                 console.log(message)
                 return message
-            }
-            
+            } else return null;
         } catch(err) {
             console.log(err)
-            error = 'An error occured'
         }
     }
 
@@ -74,7 +56,7 @@
         error = undefined
         console.log('xd')
         try {
-            const res = await fetch('/auth/register', {
+            const res = await fetch(':5000/auth/register', {
                 method: 'POST',
                 body: JSON.stringify({
                     email,

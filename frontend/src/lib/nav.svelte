@@ -1,17 +1,17 @@
 <script>
-    import Auth from "$lib/auth.svelte"
+    // import Auth from "$lib/auth.svelte"
 
     let user;
 </script>
 
 <div class="meniu-align">
-    {#if user}
+    <!-- {#if user}
     <div class="reg-log">
         <button class="reg-logbtn"><a href="/">Prisijungti/Registruotis</a></button>
     </div>
     {:else}
         <Auth/>
-    {/if}
+    {/if} -->
 
     <div class="meniu">
         

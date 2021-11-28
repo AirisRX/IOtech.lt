@@ -1,0 +1,11 @@
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+
+/public/build/
+/.vscode/
+package-lock.json
+/logo

@@ -1,13 +1,12 @@
 <script>
-    import Nav from "$lib/nav.svelte"
+    // import Nav from "$lib/nav.svelte"
     import Footer from "$lib/footer.svelte"
 
     
 </script>
 
 <main>
-    
-    <Nav/>
+    <!-- <Nav/> -->
 
     <slot></slot>
 
