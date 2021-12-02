@@ -1,0 +1,109 @@
+1
+HP 245 G7
+Ryzen 3 3300U
+4GB DDR4
+SSD 128GB
+Radeon Vega 6
+Winbdows 10 Home
+1366x768 14" Matt
+1.56kg
+
+2
+Lenovo Essential V15
+Athlon Gold 3150U
+8GB DDR4
+SSD 256GB
+Radeon Vega
+Windows 10 Home
+1920x1080 15.6" Matt
+1.85kg
+
+3
+Dell Vostro 15 3510
+i3-1115G4
+4GB DDR4
+SSD 256GB
+Intel UHD Graphics
+Ubuntu Linux
+1920x1080 15.6" Anti-glare
+1.8kg
+
+4
+Lenovo ThinkBook 15 ITL (Gen 2)
+i3-1115G4
+8GB DDR4
+SSD 256GB
+Intel UHD Graphics
+Windows 10 Home
+1920x1080 15.6" Matt
+1.7kg
+
+5
+Acer Aspire 5 A515-56-55NX
+i5-1135G7
+8GB DDR4
+SSD 512GB
+Iris Xe Graphics
+Windows 10 Home
+1920x1080 15.6" Matt
+1.9kg
+
+6
+Lenovo ThinkPad E15
+Ryzen 5 4500U
+8GB DDR4
+SSD 256GB
+Radeon Vega
+DOS
+1920x1080 15.6 Matt
+1.9kg
+
+7
+Asus UX363EA Flip S
+i5-1135G7
+8GB DDR4
+SSD 512GB
+Iris Xe Graphics
+Windows 10 Home
+1920x1080 13.3" Glare Touch
+1.3kg
+
+8
+Microsoft Surface Laptop Go Platinum
+i5-1035G1
+8GB DDR4
+SSD 256GB
+Intel UHD Graphics
+Windows 10 Home
+1536x1024 12.4" Touchscreen
+1.11kg
+
+9
+Apple MacBook Air
+Apple M1
+8GB RAM
+SSD 256GB
+M1 GPU
+Mac OS
+Retina 13.3"
+1.29kg
+
+10
+Acer Nitro 5 AN515-57-71VD
+i7-11800H
+8GB DDR4
+SSD 512GB
+RTX 3050
+Windows 10 Pro
+1920x1080 15.6" Anti-glare
+2.2kg
+
+11
+Dell XPS 13 9305
+i7-1165G7
+16GB DDR4
+SSD 512GB
+Iris Xe Graphics
+Windows 10 Home
+1920x1080 13.3" Anti-glare
+1.9kg

@@ -1,0 +1,17 @@
+1
+Logitech C270
+1280x720
+USB 2.0
+30FPS
+
+2
+Logitech C920
+1920x1080 
+USB 2.0
+30FPS
+
+3
+Logitech Brio
+3840x2160
+USB 3.0
+60 FPS

@@ -1,0 +1,27 @@
+1
+Patriot SSD
+240GB
+Sata III
+555/500 MB/s
+3D NAND
+
+2
+GOODRAM CX400 SSD
+512GB
+Sata III
+550/500 MB/s
+3D NAND
+
+
+3
+WD Green SSD
+1TB
+600 MB/s
+Sata III
+3D NAND
+
+4
+Seagate HDD
+7200RPM
+2TB
+256MB Cache

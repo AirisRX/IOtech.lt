@@ -1,0 +1,24 @@
+1
+Gigabyte GT 1030
+2GB VRAM
+PCI Express 3.0
+Low-profile
+
+2
+Gigabyte GTX 1660 Ti
+OC
+6GB GDDR6
+192-bit
+PCI Express 3.0
+
+3
+ASUS ROG RTX 3070 Ti
+OC
+8GB GDDR6X
+PCI Express 3.0
+
+4
+MSI Radeon RX 6900 XT
+16GB
+256-bit
+PCI Express 4.0

@@ -1,0 +1,9 @@
+1
+SilentiumPc Armis AR1
+ATX
+
+2
+SilentiumPc Signum SG1 TG
+ATX
+Grūdintas stiklas
+2x120mm fans

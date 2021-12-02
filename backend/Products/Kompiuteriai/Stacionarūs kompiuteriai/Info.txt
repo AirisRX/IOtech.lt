@@ -1,0 +1,27 @@
+1
+Apple iMac
+i5-7360U
+8GB DDR4
+SSD 256GB
+Iris Plus 640 Graphics
+Mac OS
+1920x1080 21.5" Glare
+5.44kg
+
+2
+HP ProOne 400 G6
+i5-10500T
+8GB DDR4
+SSD 256GB
+Intel UHD 630
+Windows 10 Home
+1920x1080 21.5" Matt
+6.3kg
+
+Mac Mini
+i3 3.6GHz
+8GB DDR4
+SSD 128GB
+Intel UHD 630
+Mac OS
+1.3kg

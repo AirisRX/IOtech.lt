@@ -1,0 +1,18 @@
+1
+Logitech M190
+USB
+Wireless
+AA Battery
+Full size
+
+2
+Logitech G102
+USB
+Wired
+Lightsync
+
+3
+Logitech Pro X
+USB
+Wireless
+Superlight

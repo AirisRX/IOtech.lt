@@ -1,0 +1,65 @@
+1
+AMD Athlon 220 GE
+Aušintuvas yra
+DDR4-2666
+3.4GHz
+2 cores/4 threads
+4MB Cache
+AM4
+Vega 3
+
+2
+AMD Ryzen 5 5600G
+Aušintuvas yra
+DDR4
+3.9-4.4GHz
+6 cores/12 threads
+16MB Cache
+AM4
+Vega
+
+3
+AMD Ryzen 7 5700G
+Aušintuvas yra
+DDR4
+3.8-4.6GHz
+8 cores/ 16 threads
+16MB cache
+AM4
+Vega
+
+4
+Intel Core i3-10105
+3.7-4.4GHz
+LGA1200
+8MB Cache
+Aušintuvas
+UHD630
+DDR4
+
+5
+Intel Core i5-11600
+4.1-4.8Ghz
+LGA1200
+12MB Cache
+Aušintuvas
+UHD 750
+DDR4
+
+6
+Intel Core i7-11700K
+3.6-4.8GHz
+LGA1200
+16MB Cache
+Aušintuvas
+UHD 750
+DDR4
+
+7
+Intel Core i9-11900K
+3.5-5GHz
+LGA1200
+16MB Cache
+Aušintuvas
+UHD 750
+DDR4

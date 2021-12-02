@@ -1,0 +1,17 @@
+1
+Gigabyte B450M-S2H
+DDR4-3200
+AM4
+MicroATX
+
+2
+Gigabyte B450M Gaming
+DDR4-2933
+AM4
+ATX
+
+3
+MSI B550M PRO-VDH
+DDR4-4400
+AM4
+MicroATX
