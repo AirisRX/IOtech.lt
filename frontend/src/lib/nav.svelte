@@ -1,5 +1,20 @@
 <script>
     import 'bulma/css/bulma.css'
+    import {onMount} from 'svelte'
+
+    let kategorijos = new Map()
+
+    async function getCategories() {
+        try {
+            const res = await fetch('http://localhost:5000/product/kategorija');
+            kategorijos = JSON.parse(await res.text())
+            console.log(kategorijos)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    onMount(getCategories);
 </script>
 
 <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
@@ -20,73 +35,21 @@
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
 
+            {#each Object.entries(kategorijos) as [kategorija, subkategorijos]}
             <div class="navbar-item has-dropdown is-hoverable">
                 <nav class="navbar" role="navigation" aria-label="dropdown navigation">
                     <div class="navbar-item has-dropdown">
-                    <!-- svelte-ignore a11y-missing-attribute -->
-                        <a class="navbar-link">Kompiuterių dalys</a>
+                    
+                        <a class="navbar-link">{kategorija}</a>
                         <div class="navbar-dropdown">
-                        <a class="navbar-item" href="category">Procesoriai (CPU)</a>
-                        <a class="navbar-item" href="category">Operatyvioji atmintis (RAM)</a>
-                        <a class="navbar-item" href="category">Pagrindinės plokštės</a>
-                        <a class="navbar-item" href="category">Aušintuvai</a>
-                        <a class="navbar-item" href="category">HDD, SSD ir kiti</a>
-                        <a class="navbar-item" href="category">Vaizdo plokštės (GPU)</a>
-                        <a class="navbar-item" href="category">Korpusai ir jų priedai</a>
-                        <a class="navbar-item" href="category">Maitinimo blokai (PSU)</a>
-                        <a class="navbar-item" href="category">Kiti priedai</a>
+                            {#each subkategorijos as sub}
+                            <a class="navbar-item" href="category">{sub}</a>
+                            {/each}
                         </div>
                     </div>
                 </nav>
             </div>
-
-            <div class="navbar-item has-dropdown is-hoverable">
-                <nav class="navbar" role="navigation" aria-label="dropdown navigation">
-                    <div class="navbar-item has-dropdown">
-                    <!-- svelte-ignore a11y-missing-attribute -->
-                        <a class="navbar-link">Kompiuteriai</a>
-                        <div class="navbar-dropdown">
-                        <a class="navbar-item" href="category">Stacionarūs kompiuteriai</a>
-                        <a class="navbar-item" href="category">Nešiojamieji kompiuteriai</a>
-                        <a class="navbar-item" href="category">Priedai</a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-
-            <div class="navbar-item has-dropdown is-hoverable">
-                <nav class="navbar" role="navigation" aria-label="dropdown navigation">
-                    <div class="navbar-item has-dropdown">
-                    <!-- svelte-ignore a11y-missing-attribute -->
-                        <a class="navbar-link">Konsolės ir jų priedai</a>
-                        <div class="navbar-dropdown">
-                        <a class="navbar-item" href="category">Microsoft Xbox ir jų priedai</a>
-                        <a class="navbar-item" href="category">Sony Playstation ir jų priedai</a>
-                        <a class="navbar-item" href="category">Nintendo Switch ir jo priedai</a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-
-            <div class="navbar-item has-dropdown is-hoverable">
-                <nav class="navbar" role="navigation" aria-label="dropdown navigation">
-                    <div class="navbar-item has-dropdown">
-                    <!-- svelte-ignore a11y-missing-attribute -->
-                        <a class="navbar-link">Periferija</a>
-                        <div class="navbar-dropdown">
-                        <a class="navbar-item" href="category">Klaviatūros</a>
-                        <a class="navbar-item" href="category">Pelės</a>
-                        <a class="navbar-item" href="category">Kilimėliai</a>
-                        <a class="navbar-item" href="category">Monitoriai</a>
-                        <a class="navbar-item" href="category">Ausinės</a>
-                        <a class="navbar-item" href="category">Kolonėles</a>
-                        <a class="navbar-item" href="category">Web kameros</a>
-                        <a class="navbar-item" href="category">Mikrofonai</a>
-                        <a class="navbar-item" href="category">Virtualios realybės (VR) akiniai ir jų priedai</a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+            {/each}
 
             <a class="navbar-item" href="about">Apie mus</a>
 
