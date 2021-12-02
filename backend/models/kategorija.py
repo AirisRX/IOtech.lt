@@ -7,7 +7,7 @@ class Kategorijos(db.Model):
     __tablename__ = "kategorijos"
 
     id = db.Column(db.Integer, primary_key=True)
-    sid = db.Column(db.Integer, ForeignKey('subkategorijos.id'), primary_key=True, nullable=False)
+    sid = db.Column(db.Integer, ForeignKey('subkategorijos.id'), nullable=False)
     pavadinimas = db.Column(db.String(20), unique=True)
 
     subkategorija = relationship(Subkategorijos, foreign_keys=sid)
