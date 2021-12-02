@@ -5,7 +5,7 @@ from flask_cors import CORS
 
 from settings import database_uri
 from database import db
-from api import Email, Login, Register, Products
+from api import Email, Login, Register, Products, Kategorija
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = database_uri 
@@ -22,4 +22,6 @@ api = Api(app)
 api.add_resource(Register, '/auth/register')
 api.add_resource(Login, '/auth/login')
 api.add_resource(Email, '/auth/email')
-api.add_resource(Products, '/product')
+# api.add_resource(Products, '/product')
+api.add_resource(Kategorija, '/product/kategorija')
+

@@ -1,2 +1,2 @@
 from .auth import *
-from .product import Products
+from .product import Products, Kategorija
