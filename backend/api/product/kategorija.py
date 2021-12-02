@@ -2,17 +2,17 @@ from database import db
 from models import Kategorijos
 from flask import request
 from flask_restful import Resource
+from collections import defaultdict
 
 class Kategorija(Resource):
     def get(self):
         data = request.get_json()
 
-        kategorija = db.session.query(Kategorijos.pavadinimas)
+        kategorijos = db.session.query(Kategorijos).all()
 
-        # if data and 'kategorija' in data:
-            # kategorija = kategorija.filter_by()
+        rez = defaultdict(list)
 
-        if not data and 'sid' not in data:
-            kategorija = kategorija.all()
+        for kategorija in kategorijos:
+            rez[kategorija.subkategorija.pavadinimas].append(kategorija.pavadinimas)
 
-        print(kategorija)
+        return rez
