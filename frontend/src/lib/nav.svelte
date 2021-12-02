@@ -26,15 +26,15 @@
                     <!-- svelte-ignore a11y-missing-attribute -->
                         <a class="navbar-link">Kompiuterių dalys</a>
                         <div class="navbar-dropdown">
-                        <a class="navbar-item" href="/">Procesoriai (CPU)</a>
-                        <a class="navbar-item" href="/">Operatyvioji atmintis (RAM)</a>
-                        <a class="navbar-item" href="/">Pagrindinės plokštės</a>
-                        <a class="navbar-item" href="/">Aušintuvai</a>
-                        <a class="navbar-item" href="/">HDD, SSD ir kiti</a>
-                        <a class="navbar-item" href="/">Vaizdo plokštės (GPU)</a>
-                        <a class="navbar-item" href="/">Korpusai ir jų priedai</a>
-                        <a class="navbar-item" href="/">Maitinimo blokai (PSU)</a>
-                        <a class="navbar-item" href="/">Kiti priedai</a>
+                        <a class="navbar-item" href="category">Procesoriai (CPU)</a>
+                        <a class="navbar-item" href="category">Operatyvioji atmintis (RAM)</a>
+                        <a class="navbar-item" href="category">Pagrindinės plokštės</a>
+                        <a class="navbar-item" href="category">Aušintuvai</a>
+                        <a class="navbar-item" href="category">HDD, SSD ir kiti</a>
+                        <a class="navbar-item" href="category">Vaizdo plokštės (GPU)</a>
+                        <a class="navbar-item" href="category">Korpusai ir jų priedai</a>
+                        <a class="navbar-item" href="category">Maitinimo blokai (PSU)</a>
+                        <a class="navbar-item" href="category">Kiti priedai</a>
                         </div>
                     </div>
                 </nav>
@@ -46,9 +46,9 @@
                     <!-- svelte-ignore a11y-missing-attribute -->
                         <a class="navbar-link">Kompiuteriai</a>
                         <div class="navbar-dropdown">
-                        <a class="navbar-item" href="/">Stacionarūs kompiuteriai</a>
-                        <a class="navbar-item" href="/">Nešiojamieji kompiuteriai</a>
-                        <a class="navbar-item" href="/">Priedai</a>
+                        <a class="navbar-item" href="category">Stacionarūs kompiuteriai</a>
+                        <a class="navbar-item" href="category">Nešiojamieji kompiuteriai</a>
+                        <a class="navbar-item" href="category">Priedai</a>
                         </div>
                     </div>
                 </nav>
@@ -60,9 +60,9 @@
                     <!-- svelte-ignore a11y-missing-attribute -->
                         <a class="navbar-link">Konsolės ir jų priedai</a>
                         <div class="navbar-dropdown">
-                        <a class="navbar-item" href="/">Microsoft Xbox ir jų priedai</a>
-                        <a class="navbar-item" href="/">Sony Playstation ir jų priedai</a>
-                        <a class="navbar-item" href="/">Nintendo Switch ir jo priedai</a>
+                        <a class="navbar-item" href="category">Microsoft Xbox ir jų priedai</a>
+                        <a class="navbar-item" href="category">Sony Playstation ir jų priedai</a>
+                        <a class="navbar-item" href="category">Nintendo Switch ir jo priedai</a>
                         </div>
                     </div>
                 </nav>
@@ -74,15 +74,15 @@
                     <!-- svelte-ignore a11y-missing-attribute -->
                         <a class="navbar-link">Periferija</a>
                         <div class="navbar-dropdown">
-                        <a class="navbar-item" href="/">Klaviatūros</a>
-                        <a class="navbar-item" href="/">Pelės</a>
-                        <a class="navbar-item" href="/">Kilimėliai</a>
-                        <a class="navbar-item" href="/">Monitoriai</a>
-                        <a class="navbar-item" href="/">Ausinės</a>
-                        <a class="navbar-item" href="/">Kolonėles</a>
-                        <a class="navbar-item" href="/">Web kameros</a>
-                        <a class="navbar-item" href="/">Mikrofonai</a>
-                        <a class="navbar-item" href="/">Virtualios realybės (VR) akiniai ir jų priedai</a>
+                        <a class="navbar-item" href="category">Klaviatūros</a>
+                        <a class="navbar-item" href="category">Pelės</a>
+                        <a class="navbar-item" href="category">Kilimėliai</a>
+                        <a class="navbar-item" href="category">Monitoriai</a>
+                        <a class="navbar-item" href="category">Ausinės</a>
+                        <a class="navbar-item" href="category">Kolonėles</a>
+                        <a class="navbar-item" href="category">Web kameros</a>
+                        <a class="navbar-item" href="category">Mikrofonai</a>
+                        <a class="navbar-item" href="category">Virtualios realybės (VR) akiniai ir jų priedai</a>
                         </div>
                     </div>
                 </nav>
