@@ -1,11 +1,13 @@
-from flask import Flask, make_response, request
-from flask_sqlalchemy import SQLAlchemy
-from flask_restful import Api
+from flask import Flask
 from flask_cors import CORS
+from flask_restful import Api
 
-from settings import database_uri
+from api.auth import Email, Register, Login
+
+from api.product import CategoryAPI
+
 from database import db
-from api import Email, Login, Register, Products, Kategorija
+from settings import database_uri
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = database_uri 
@@ -22,6 +24,4 @@ api = Api(app)
 api.add_resource(Register, '/auth/register')
 api.add_resource(Login, '/auth/login')
 api.add_resource(Email, '/auth/email')
-# api.add_resource(Products, '/product')
-api.add_resource(Kategorija, '/product/kategorija')
-
+api.add_resource(CategoryAPI, '/product/category')

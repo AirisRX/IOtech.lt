@@ -1,5 +1,5 @@
 from database import db
-from models import User
+from models.user import User
 from flask import request
 from flask_restful import Resource
 import hashlib

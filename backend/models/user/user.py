@@ -1,5 +1,6 @@
 from database import db
 
+
 class User(db.Model):
     __tablename__ = "users"
 
@@ -11,6 +12,7 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.username
+
     def __init__(self, name, email, password, session):
         self.name = name
         self.email = email

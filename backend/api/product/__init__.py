@@ -1,2 +1,2 @@
-from .product import Products
-from .kategorija import Kategorija
+from .product import Product
+from .category import CategoryAPI
