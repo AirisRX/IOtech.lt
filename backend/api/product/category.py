@@ -33,6 +33,6 @@ class CategoryAPI(Resource):
 
             ref[names[-1]] = {"kategorijos": {}}
             if c.description:
-                ref[names[-1]]["_aprašas"] = c.description
+                ref[names[-1]]["aprasas"] = c.description
 
         return formatted_c

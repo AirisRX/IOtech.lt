@@ -1,6 +1,6 @@
 <script>
-    import 'bulma/css/bulma.css'
-    import {onMount} from 'svelte'
+    export const prerender = true;
+    import 'bulma'
 
     let kategorijos = new Map()
 
@@ -16,7 +16,7 @@
         }
     }
 
-    onMount(getCategories);
+    getCategories();
 </script>
 
 <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
@@ -37,15 +37,15 @@
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
 
-            {#each Object.entries(kategorijos) as [sub, attrs]}
+            {#each Object.entries(kategorijos) as [kat, attrs]}
             <div class="navbar-item has-dropdown is-hoverable">
                 <nav class="navbar" role="navigation" aria-label="dropdown navigation">
                     <div class="navbar-item has-dropdown">
                     
-                        <a class="navbar-link">{sub}</a>
+                        <a class="navbar-link" href="/produktai/{kat}">{kat}</a>
                         <div class="navbar-dropdown">
-                            {#each Object.entries(attrs["kategorijos"]) as [kat, sub]}
-                                <a class="navbar-item" href="category">{kat}</a>
+                            {#each Object.entries(attrs["kategorijos"]) as [kat, attrs]}
+                                <a class="navbar-item" href="/produktai/{kat}">{kat}</a>
                             {/each}
                         </div>
                     </div>
