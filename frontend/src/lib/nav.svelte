@@ -6,8 +6,10 @@
 
     async function getCategories() {
         try {
-            const res = await fetch('http://localhost:5000/product/kategorija');
-            kategorijos = JSON.parse(await res.text())
+            const res = await fetch('http://localhost:5000/product/category');
+            const text = await res.text()
+            console.log(text)
+            kategorijos = JSON.parse(text)
             console.log(kategorijos)
         } catch (err) {
             console.log(err)
@@ -35,15 +37,15 @@
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
 
-            {#each Object.entries(kategorijos) as [kategorija, subkategorijos]}
+            {#each Object.entries(kategorijos) as [sub, attrs]}
             <div class="navbar-item has-dropdown is-hoverable">
                 <nav class="navbar" role="navigation" aria-label="dropdown navigation">
                     <div class="navbar-item has-dropdown">
                     
-                        <a class="navbar-link">{kategorija}</a>
+                        <a class="navbar-link">{sub}</a>
                         <div class="navbar-dropdown">
-                            {#each subkategorijos as sub}
-                            <a class="navbar-item" href="category">{sub}</a>
+                            {#each Object.entries(attrs["kategorijos"]) as [kat, sub]}
+                                <a class="navbar-item" href="category">{kat}</a>
                             {/each}
                         </div>
                     </div>
