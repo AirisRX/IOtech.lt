@@ -1,6 +1,5 @@
 <script>
-    export const prerender = true;
-    import 'bulma'
+    import 'bulma/css/bulma.min.css'
 
     let kategorijos = new Map()
 
@@ -10,31 +9,32 @@
             const text = await res.text()
             console.log(text)
             kategorijos = JSON.parse(text)
-            console.log(kategorijos)
         } catch (err) {
             console.log(err)
         }
     }
 
     getCategories();
+
+    let burger = false
 </script>
 
 <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
 
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <img src="IOtech.png" width="auto" height="auto" alt="IOtech.lt - kompiuterių technikos parduotuvė">
+        <img src="/IOtech.png" width="auto" height="auto" alt="IOtech.lt - kompiuterių technikos parduotuvė">
       </a>
   
       <!-- svelte-ignore a11y-missing-attribute -->
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <div role="button" class="navbar-burger" aria-label="menu" aria-expanded="true" data-target="navbarBasicExample" class:is-active="{burger}" on:click="{()=>burger=!burger}">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
-      </a>
+      </div>
     </div>
   
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div id="navbarBasicExample" class="navbar-menu" class:is-active="{burger}" >
         <div class="navbar-start">
 
             {#each Object.entries(kategorijos) as [kat, attrs]}
@@ -53,7 +53,7 @@
             </div>
             {/each}
 
-            <a class="navbar-item" href="about">Apie mus</a>
+            <a class="navbar-item" href="/about">Apie mus</a>
 
         </div>
     </div>
@@ -61,7 +61,7 @@
     <div class="navbar-end">
         <div class="navbar-item">
             <div class="buttons">
-                <a class="button is-primary" href="auth">
+                <a class="button is-primary" href="/auth">
                     <strong>Registuotis/Prisijungti</strong>
                 </a>
             </div>
