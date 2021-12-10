@@ -138,6 +138,3 @@ dmypy.json
 cython_debug/
 
 .vscode/
-
-# Duomenų bazė
-database/db.sqlite
