@@ -1,3 +1,0 @@
-from .component_category import ComponentCategory
-from .component_image import ComponentImage
-from .component_shared_info import ComponentSharedInfo

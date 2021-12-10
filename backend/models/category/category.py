@@ -7,7 +7,11 @@ class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     parent_id = db.Column(db.Integer, db.ForeignKey(id), nullable=True)
     name = db.Column(db.String(20), nullable=False)
-    description = db.Column(db.String(100), nullable=True)
+
+    # Nullable=false, kai ikursim startupa
+    atid = db.Column(db.Integer, db.ForeignKey('attribute_type.id'), nullable=True)
+
+    slug = db.Column(db.String(20), nullable=False)
 
     def __repr__(self):
         return f'<Category {self.name}>'
