@@ -1,2 +1,2 @@
-from .product import Product
+from .products import ProductsAPI
 from .category import CategoryAPI
