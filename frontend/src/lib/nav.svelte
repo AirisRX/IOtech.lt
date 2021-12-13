@@ -1,5 +1,8 @@
 <script>
     import 'bulma/css/bulma.min.css'
+    import { fade } from 'svelte/transition';
+    import { fly } from 'svelte/transition';
+    import { slide } from 'svelte/transition';
 
     let kategorijos = new Map()
 
@@ -19,7 +22,7 @@
     let burger = false
 </script>
 
-<nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+<nav id="pagr-meniu" class="navbar is-transparent p-1 is-fixed-top has-navbar-fixed-top" role="navigation" aria-label="main navigation">
 
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
@@ -40,7 +43,7 @@
             {#each Object.entries(kategorijos) as [kat, attrs]}
             <div class="navbar-item has-dropdown is-hoverable">
                 <nav class="navbar" role="navigation" aria-label="dropdown navigation">
-                    <div class="navbar-item has-dropdown">
+                    <div class="navbar-item has-dropdown" transition:fly="{{ y: -200, duration: 1500 }}">
                     
                         <a class="navbar-link" href="/produktai/{kat}">{kat}</a>
                         <div class="navbar-dropdown">
@@ -53,7 +56,7 @@
             </div>
             {/each}
 
-            <a class="navbar-item" href="/about">Apie mus</a>
+            <!-- <a class="navbar-item" href="/about">Apie mus</a> -->
 
         </div>
     </div>
@@ -61,11 +64,46 @@
     <div class="navbar-end">
         <div class="navbar-item">
             <div class="buttons">
-                <a class="button is-primary" href="/auth">
+                <a class="button is-primary is-rounded" href="/cart">
+                    <span class="icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </span>
+                    <strong>Krepšelis</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="buttons">
+                <a class="button is-primary is-rounded" href="/auth">
+                    <span class="icon">
+                        <i class="fas fa-user"></i>
+                    </span>
                     <strong>Registuotis/Prisijungti</strong>
                 </a>
             </div>
         </div>
     </div>
 
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="buttons">
+                <a class="button is-primary is-rounded" href="/about">
+                    <span class="icon">
+                        <i class="fas fa-address-card"></i>
+                    </span>
+                    <strong>Apie mus</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+
 </nav>
+
+<style>
+:global(#pagr-meniu) {
+    margin-bottom: 100px;
+}
+</style>
