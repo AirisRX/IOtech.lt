@@ -7,7 +7,7 @@
         try {
             const res = await fetch('http://localhost:5000/product/category');
             const text = await res.text()
-            console.log(text)
+            // console.log(text)
             kategorijos = JSON.parse(text)
         } catch (err) {
             console.log(err)
