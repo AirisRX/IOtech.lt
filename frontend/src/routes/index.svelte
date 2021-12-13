@@ -25,20 +25,22 @@
 <main>
 
 <section class="section level is-small">
-  <h1 class="title level-item">Nauji produktai</h1>
-
-  {#each produktai as produktas}
-    <div class="tile is-parent">
-        <article class="tile is-child notification is-info ">
-          <p class="title">{produktas["brand"]} {produktas["model"]}</p>
-          <p class="subtitle">{produktas["cost"]}€</p>
-          <figure class="image">
-            <img src="{produktas["img"]}" alt="Produktas">
-          </figure>
-        </article>
-      </div>
-  {/each}
-
+  <div class="tile is-ancestor">
+    <h1 class="tile is-4 title level-item ">Nauji produktai</h1>
+    <div class="tile">
+      {#each produktai as produktas}
+        <div class="tile is-parent is-3">
+            <article class="tile is-child notification is-info">
+              <p class="title">{produktas["brand"]} {produktas["model"]}</p>
+              <p class="subtitle">{produktas["cost"]}€</p>
+              <figure class="image">
+                <img src="{produktas["img"]}" alt="Produktas">
+              </figure>
+            </article>
+          </div>
+      {/each}
+    </div>
+  </div>
 </section>
 
 <hr>
@@ -54,41 +56,43 @@
 <hr>
 
 <section class="section level is-small">
-  <h1 class="title level-item">Išpardavimai</h1>
-
-  {#each produktai as produktas}
-  <div class="tile is horizontal">
-    <div class="tile is-parent">
-        <article class="tile is-child notification is-info ">
-          <p class="title">{produktas["brand"]} {produktas["model"]}</p>
-          <p class="subtitle">{produktas["cost"]}€</p>
-          <figure class="image">
-            <img src="{produktas["img"]}" alt="Produktas">
-          </figure>
-        </article>
-      </div>
+  <div class="tile is-ancestor">
+    <h1 class="tile is-4 title level-item">Išpardavimai</h1>
+    <div class="tile">
+      {#each produktai as produktas}
+        <div class="tile is-parent is-3">
+            <article class="tile is-child notification is-info">
+              <p class="title">{produktas["brand"]} {produktas["model"]}</p>
+              <p class="subtitle">{produktas["cost"]}€</p>
+              <figure class="image">
+                <img src="{produktas["img"]}" alt="Produktas">
+              </figure>
+            </article>
+          </div>
+      {/each}
     </div>
-  {/each}
-
+  </div>
 </section>
 
 <hr>
 
 <section class="section level is-small">
-  <h1 class="title level-item">Rekomenduojami</h1>
-
-  {#each produktai as produktas}
-    <div class="tile is-parent">
-        <article class="tile is-child notification is-info ">
-          <p class="title">{produktas["brand"]} {produktas["model"]}</p>
-          <p class="subtitle">{produktas["cost"]}€</p>
-          <figure class="image">
-            <img src="{produktas["img"]}" alt="Produktas">
-          </figure>
-        </article>
-      </div>
-  {/each}
-
+  <div class="tile is-ancestor">
+    <h1 class="tile is-4 title level-item">Rekomenduojami</h1>
+    <div class="tile">
+      {#each produktai as produktas}
+        <div class="tile is-parent is-3">
+            <article class="tile is-child notification is-info">
+              <p class="title">{produktas["brand"]} {produktas["model"]}</p>
+              <p class="subtitle">{produktas["cost"]}€</p>
+              <figure class="image">
+                <img src="{produktas["img"]}" alt="Produktas">
+              </figure>
+            </article>
+          </div>
+      {/each}
+    </div>
+  </div>
 </section>
 
 <hr>
