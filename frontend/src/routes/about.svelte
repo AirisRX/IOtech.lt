@@ -1,18 +1,24 @@
 <main>
-    <h1 class="about">Saityno projektas</h1>
-    <p class="about">Šis projektas yra kūriamas Airido Rupšo ir Nerijaus Pocevičiaus. Daroma kompiuterių technikos parduotuvė.</p>
-    <p class="about">Kūriamas Klaipėdos Universiteto JNII21 Saityno technologijų dalykui.</p>
-    <p class="about">Naudojama:</p>
-    <p class="about">HTML - Svelte</p>
-    <p class="about">CSS - Bulma</p>
-    <p class="about">Duomenų bazė - Python, SQL, Docker</p>
+	<article class="message is-primary container">
+		<div class="message-header">
+			<p>Saityno projektas</p>
+		</div>
+		<div class="message-body">
+			<p>
+				Šis projektas yra kūriamas Airido Rupšo ir Nerijaus Pocevičiaus. Daroma kompiuterių
+				technikos parduotuvė.
+			</p>
+			<p>Kūriamas Klaipėdos Universiteto JNII21 Saityno technologijų dalykui.</p>
+			<p>Naudojama:</p>
+			<p>HTML - Svelte</p>
+			<p>CSS - Bulma</p>
+			<p>Duomenų bazė - Python, SQL</p>
+		</div>
+	</article>
 </main>
 
 <style>
-.about {
-    color: white;
-    margin: 20px auto;
-    width: 70%;
-    height: 50%;
-}
+	p {
+		text-align: center;
+	}
 </style>
