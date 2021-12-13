@@ -1,7 +1,6 @@
 <script>
     import Auth from "$lib/auth.svelte"
 </script>
-<hr>
 <div class="center-align"><Auth/></div>
 
 <style>
