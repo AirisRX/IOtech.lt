@@ -1,10 +1,14 @@
 <script>
     import Nav from "$lib/nav.svelte"
     import Footer from "$lib/footer.svelte"
+    import '@fortawesome/fontawesome-free/css/all.min.css'
+    import 'bulma/css/bulma.min.css';
 </script>
 
 <main>
     <Nav/>
+
+<div style="margin-top: 50px;">.</div>
     
     <!-- <nav class="breadcrumb is-right" aria-label="breadcrumbs">
         <ul>
