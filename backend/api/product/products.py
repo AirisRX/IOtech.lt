@@ -12,7 +12,7 @@ from database import db
 
 class ProductsAPI(Resource):
     def get(self):
-        slug = request.get_json()['slug']
+        slug = request.args.get('slug')
         q = db.session.query(Comp.id, Brand.name.label("brand"), CompSI.model, Product.cost,
                              Product.count, CompIMG.url.label("img")).select_from(Category).filter(Category.slug == slug)
         q = q.join(CompSI, Category.atid == CompSI.atid)
