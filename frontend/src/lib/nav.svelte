@@ -20,6 +20,11 @@
 	getCategories();
 
 	let burger = false;
+
+	function openPage()
+	{
+		
+	}
 </script>
 
 <nav
@@ -74,11 +79,19 @@
 			<!-- <a class="navbar-item" href="/about">Apie mus</a> -->
 		</div>
 	</div>
-
+	
 	<div class="navbar-end">
 		<div class="navbar-item">
-			<span class="icon"><i class="fas fa-search" /></span>
-			<input class="input is-rounded is-medium" type="text" placeholder="Paieška" />
+			<div class="field has-addons">
+				<div class="control is-rounded">
+				  <input class="input is-rounded" type="text" placeholder="Paieška" on:change="{openPage}">
+				</div>
+				<div class="control">
+				  <a class="button is-primary is-rounded" href="/search">
+					<span class="icon"><i class="fas fa-search" /></span>
+				  </a>
+				</div>
+			  </div>
 		</div>
 	</div>
 
