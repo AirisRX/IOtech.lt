@@ -1,6 +1,5 @@
 <script>
 	import 'bulma/css/bulma.min.css';
-  import { fade } from 'svelte/transition';
 
 	let produktai = [];
 
@@ -8,7 +7,6 @@
 		try {
 			const res = await fetch('http://localhost:5000/product/products?slug=nesiojami_kompiuteriai');
 			const text = await res.text();
-			// console.log(text)
 			produktai = JSON.parse(text);
 			console.log(produktai);
 		} catch (err) {
@@ -18,18 +16,13 @@
 
 	getProducts();
 
-	// function cartnotification() {
-	// 	alert('Jūsų prekė buvo sėkmingai pridėta į krepšelį. ');
-	// }
-
 	let notification;
 
 	function toggleNotification(text) {
-		console.log("veikia ar neveikia stai kur klausimas")
 		if (notification) {
 			notification = null;
 			return;
-		} 
+		}
 		notification = text;
 		setInterval(() => {
 			notification = null;
@@ -41,26 +34,30 @@
 	<title>IOTech.lt - kompiuterių technikos parduotuvė</title>
 </svelte:head>
 
-
-<main class="mt-4">
-	<div class="container">
-	
-		{#if notification}
+<main>
+	{#if notification}
 		<div>
-			<div class="notification has-background-white has-text-primary has-text-weight-bold">
+			<div
+				class="notification has-background-white has-text-primary has-text-weight-bold"
+				style="position: absolute; top: 15px; left: 15px;"
+			>
 				<p>{notification}</p>
-			  </div>
+			</div>
 		</div>
-		{/if}
+	{/if}
 
-		<div class="box" style="background-color: rgba(0, 0, 0, 0.6); border-radius: 10px; margin-top: 15px;">
+	<div class="container">
+		<div
+			class="box"
+			style="background-color: rgba(0, 0, 0, 0.6); border-radius: 10px; margin-top: 15px;"
+		>
 			<h1 class="title" style="padding-top: 10px;">Nauji produktai</h1>
 			<section class="section level is-small">
 				<div class="tile is-ancestor">
 					<div class="tile">
 						{#each produktai as produktas}
 							<div class="tile is-parent is-3">
-								<article class="tile is-child notification is-info">
+								<article class="tile is-child notification is-info" style="padding-right: 24px;">
 									<p class="title">{produktas['brand']} {produktas['model']}</p>
 									<figure class="image">
 										<img src={produktas['img']} alt="Produktas" style="border-radius: 5px;" />
@@ -70,7 +67,10 @@
 											</div>
 											<button class="button is-primary is-rounded">
 												<span class="icon is-left"><i class="fas fa-shopping-bag" /></span>
-												<span on:click={() => toggleNotification("Jūsų prekė buvo pridėta į krepšelį.")}>Į krepšelį</span>
+												<span
+													on:click={() => toggleNotification('Jūsų prekė buvo pridėta į krepšelį.')}
+													>Į krepšelį</span
+												>
 											</button>
 										</div>
 									</figure>
@@ -80,10 +80,7 @@
 					</div>
 				</div>
 			</section>
-			
-
 		</div>
-
 
 		<hr />
 
@@ -114,7 +111,10 @@
 											</div>
 											<button class="button is-primary is-rounded">
 												<span class="icon is-left"><i class="fas fa-shopping-bag" /></span>
-												<span>Į krepšelį</span>
+												<span
+													on:click={() => toggleNotification('Jūsų prekė buvo pridėta į krepšelį.')}
+													>Į krepšelį</span
+												>
 											</button>
 										</div>
 									</figure>
@@ -145,7 +145,10 @@
 											</div>
 											<button class="button is-primary is-rounded">
 												<span class="icon is-left"><i class="fas fa-shopping-bag" /></span>
-												<span>Į krepšelį</span>
+												<span
+													on:click={() => toggleNotification('Jūsų prekė buvo pridėta į krepšelį.')}
+													>Į krepšelį</span
+												>
 											</button>
 										</div>
 									</figure>
@@ -162,6 +165,5 @@
 <style>
 	.title {
 		color: white;
-		/* display: flex; */
 	}
 </style>
