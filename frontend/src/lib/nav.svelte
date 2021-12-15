@@ -63,10 +63,10 @@
 				<div class="navbar-item has-dropdown is-hoverable">
 					<nav class="navbar" role="navigation" aria-label="dropdown navigation">
 						<div class="navbar-item has-dropdown" transition:fly={{ y: -200, duration: 1500 }}>
-							<a class="navbar-link" href="/produktai/{sattrs['slug']}">{sub}</a>
+							<a class="navbar-link" href="/kategorijos/{sattrs['slug']}">{sub}</a>
 							<div class="navbar-dropdown">
 								{#each Object.entries(sattrs['kategorijos']) as [kat, kattrs]}
-									<a class="navbar-item" href="/produktai/{kattrs['slug']}">{kat}</a>
+									<a class="navbar-item" href="/kategorijos/{kattrs['slug']}">{kat}</a>
 								{/each}
 							</div>
 						</div>
