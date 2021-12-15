@@ -33,6 +33,7 @@ class ProductsAPI(Resource):
 
         for r in res:
             product = {
+                "id": r.id,
                 "model": r.model,
                 "cost": r.cost,
                 "count": r.count
