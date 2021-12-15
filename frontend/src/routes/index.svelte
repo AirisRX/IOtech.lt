@@ -36,14 +36,12 @@
 
 <main>
 	{#if notification}
-		<div>
 			<div
 				class="notification has-background-white has-text-primary has-text-weight-bold"
-				style="position: absolute; top: 15px; left: 15px;"
+				style="position: fixed; top: 15px; left: 15px; display:inline-block; margin-top: 75px;"
 			>
 				<p>{notification}</p>
 			</div>
-		</div>
 	{/if}
 
 	<div class="container">
@@ -58,7 +56,7 @@
 						{#each produktai as produktas}
 							<div class="tile is-parent is-3">
 								<article class="tile is-child notification is-info" style="padding-right: 24px;">
-									<p class="title">{produktas['brand']} {produktas['model']}</p>
+									<p class="title" style="height: 100px;">{produktas['brand']} {produktas['model']}</p>
 									<figure class="image">
 										<img src={produktas['img']} alt="Produktas" style="border-radius: 5px;" />
 										<div class="columns">
@@ -101,8 +99,8 @@
 					<div class="tile">
 						{#each produktai as produktas}
 							<div class="tile is-parent is-3">
-								<article class="tile is-child notification is-info">
-									<p class="title">{produktas['brand']} {produktas['model']}</p>
+								<article class="tile is-child notification is-info" style="padding-right: 24px;">
+									<p class="title" style="height: 100px;">{produktas['brand']} {produktas['model']}</p>
 									<figure class="image">
 										<img src={produktas['img']} alt="Produktas" style="border-radius: 5px;" />
 										<div class="columns">
@@ -135,8 +133,8 @@
 					<div class="tile">
 						{#each produktai as produktas}
 							<div class="tile is-parent is-3">
-								<article class="tile is-child notification is-info">
-									<p class="title">{produktas['brand']} {produktas['model']}</p>
+								<article class="tile is-child notification is-info" style="padding-right: 24px;">
+									<p class="title" style="height: 100px;">{produktas['brand']} {produktas['model']}</p>
 									<figure class="image">
 										<img src={produktas['img']} alt="Produktas" style="border-radius: 5px;" />
 										<div class="columns">
