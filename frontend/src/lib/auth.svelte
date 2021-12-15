@@ -8,8 +8,8 @@
     <div class="box">
         <Tabs>
             <TabList>
-                <Tab>Login</Tab>
-                <Tab>Register</Tab>
+                <Tab>Prisijungti</Tab>
+                <Tab>Registruotis</Tab>
             </TabList>
 
             <TabView>

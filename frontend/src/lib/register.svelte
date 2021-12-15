@@ -14,14 +14,18 @@
     let confirm_password;
     let passwords_match = true
     let submit_message = null
-
-    let email_problem = null
+    let problem = null
 
     async function validateEmail() {
-        if (!email) email_problem = null;
+        if (!email) problem = null;
         else if (!!!email.match(email_regex)) {
-            email_problem = "Invalid email"
-        } else email_problem = await validateEmailExistence()
+            problem = {message: "Netinkamas el. pašto adresas", field: "email"}
+        } else problem = {message: await validateEmailExistence(), field: "email"}
+
+        console.log(problem)
+        if (problem) {
+            return false;
+        }
     }
 
     async function validateEmailExistence() {
@@ -51,7 +55,31 @@
     }
 
     async function register() {
-        console.log('xd')
+        
+        if (!name)
+        {
+            problem = {message: "Prašome užpildyti jūsų vardą", field: "name"}
+            return;
+        }
+
+        if (!email)
+        {
+            problem = {message: "Prašome užpildyti el. pašto adresą", field: "email"}
+            return;
+        }
+
+        if (!await validateEmail()) {
+            return;
+        }
+
+        if (!password)
+        {
+            problem = {message: "Prašome užpildyti slaptažodį", field: "password"}
+            return;
+        }
+
+        problem = null;
+
         try {
             const res = await fetch('http://localhost:5000/auth/register', {
                 method: 'POST',
@@ -85,58 +113,63 @@
 
 
 <div class="field">
-    <label class="label">Name</label>
+    <label class="label">Vardas:</label>
     <div class="control has-icons-right">
-      <input class="input" type="text" bind:value="{name}">
+      <input class="input" type="text" class:is-danger={problem && problem["field"] == "name"} bind:value="{name}">
       <span class="icon is-small is-right">
           <i class="fas"></i>
       </span>
     </div>
   </div>
+  {#if problem && problem["field"] == "name"}
+  <p class="help is-danger">{problem["message"]}</p>
+  {/if}
   <!-- {#if name_problem}
   <p class="help is-danger">{name_problem}</p>
   {/if} -->
 
 <div class="field">
-    <label class="label">E-mail</label>
+    <label class="label">El. pašto adresas:</label>
     <div class="control has-icons-right">
-      <input required class="input" class:is-danger={email_problem} type="email" bind:value={email} on:input={validateEmail}>
+      <input class="input" class:is-danger={problem && problem["field"] == "email"} type="email" bind:value={email} on:input={validateEmail}>
       <span class="icon is-small is-right">
           <i></i>
       </span>
     </div>
   </div>
-  {#if email_problem}
-  <p class="help is-danger">{email_problem}</p>
+  {#if problem && problem["field"] == "email"}
+  <p class="help is-danger">{problem["message"]}</p>
   {/if}
 
   <div class="field">
-    <label class="label">Password</label>
+    <label class="label">Slaptažodis:</label>
     <div class="control has-icons-right">
-      <input required class="input" class:is-danger={!passwords_match} type="password" bind:value={password} on:input={validatePasswords}>
+      <input class="input" class:is-danger={!passwords_match || problem && problem["field"] == "password"} type="password" bind:value={password} on:input={validatePasswords}>
       <span class="icon is-small is-right" >
         <i></i>
     </span>
     </div>
   </div>
-  
+  {#if problem && problem["field"] == "password"}
+  <p class="help is-danger">{problem["message"]}</p>
+  {/if}
 
   <div class="field">
-    <label class="label">Confirm Password</label>
+    <label class="label">Pakartokite slaptažodį:</label>
     <div class="control has-icons-right">
-      <input required class="input" class:is-danger={!passwords_match} type="password" bind:value={confirm_password} on:input={validatePasswords}>
+      <input class="input" class:is-danger={!passwords_match} type="password" bind:value={confirm_password} on:input={validatePasswords}>
       <span class="icon is-small is-right has-text-warning">
           <i></i>
       </span>
     </div>
   </div>
   {#if !passwords_match}
-  <p class="help is-danger">Passwords do not match</p>
+  <p class="help is-danger">Slaptažodžiai nesutampa</p>
   {/if}
   
 <div class="field">
     <div class="control">
-      <button class="button is-success" on:click="{register}">Register</button>
+      <button class="button is-success" on:click="{register}">Registruotis</button>
     </div>
   </div>
 {#if submit_message}
