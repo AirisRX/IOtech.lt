@@ -1,21 +1,32 @@
+<script context="module">
+	/** @type {import('@sveltejs/kit').Load} */
+	export async function load({ page, fetch }) {
+		// console.log(page.params.category);
+
+		const url = `http://localhost:5000/product/products?slug=${page.params.category}`;
+		console.log(url);
+		const res = await fetch(url);
+
+		if (res.ok) {
+			return {
+				props: {
+					produktai: await res.json()
+				}
+			}
+		}
+		
+		return {
+			status: res.status,
+			error: new Error(`Could not load ${url}`)
+		};
+	}
+</script>
+
 <script>
 	import 'bulma/css/bulma.css';
-	import 'bulma/css/bulma.min.css';
+	import 'bulma/css/bulma.min.css'
 
-	let produktai = [];
-
-	async function getProducts() {
-		try {
-			const res = await fetch('http://localhost:5000/product/products?slug=nesiojami_kompiuteriai');
-			const text = await res.text();
-			produktai = JSON.parse(text);
-			console.log(produktai);
-		} catch (err) {
-			console.log(err);
-		}
-	}
-
-	getProducts();
+	export let produktai;
 
 	let notification;
 
@@ -30,6 +41,12 @@
 			notification = null;
 		}, 3000);
 	}
+
+	console.log()
+	console.log()
+
+	let nuo_kaina = 500;
+	let iki_kaina = 500;
 
 </script>
 
@@ -53,24 +70,41 @@
 			<h1 class="title">Filtras</h1>
 			<div class="columns">
 				<div class="column">
-					Prekių kaina:
-					<input
+					Prekių kaina (€):
+					<!-- <input
 						class="slider is-fullwidth is-success"
 						step="1"
 						min="0"
 						max="100"
 						value="50"
 						type="range"
-					/>
-					<!-- <input class="slider is-fullwidth is-success" step="1" min={produktas['cost']} max={produktas['cost']} value="50" type="range"> -->
+					/> -->
+					<div>
+						<div style="display: inline-block;">
+							<p>Nuo</p>
+							<input class="slider is-fullwidth is-success" step="50" bind:value={nuo_kaina} min={Math.min.apply(Math, produktai.map(function(o) { return o.cost }))} max={Math.max.apply(Math, produktai.map(function(o) { return o.cost }))} type="number">
+						</div>
+
+						<div style="display: inline-block;">
+							<p>Iki</p>
+							<input class="slider is-fullwidth is-success" step="50" bind:value={iki_kaina} min={Math.min.apply(Math, produktai.map(function(o) { return o.cost }))} max={Math.max.apply(Math, produktai.map(function(o) { return o.cost }))} type="number">
+						</div>
+					</div>
 				</div>
 				<div class="column">
           <div class="columns">
             <div class="column has-text-centered">
           Gamintojas:
-          {#each produktai as produktas}
-          <p class="product">{produktas['brand']}</p>
-          <input type="checkbox"/>
+		  <div>
+          {#each produktai.filter((value, index, self) => index === self.findIndex((t) => (
+			t.brand === value.brand
+		  ))) as produktas}
+			
+			<div class="is-inline-block">
+				<p class="product p-1">{produktas['brand']}</p>
+				<input type="checkbox"/>
+			</div> 
+		  
           {/each}
           </div>
           
@@ -91,7 +125,7 @@
 						{#each produktai as produktas}
 							<div class="tile is-parent is-3">
 								<article class="tile is-child notification is-info" style="padding-right: 24px;">
-									<p class="title">{produktas['brand']} {produktas['model']}</p>
+									<p class="title" style="height: 100px;">{produktas['brand']} {produktas['model']}</p>
 									<figure class="image">
 										<img src={produktas['img']} alt="Produktas" style="border-radius: 5px;" />
 										<div class="columns">
@@ -109,6 +143,8 @@
 									</figure>
 								</article>
 							</div>
+						{:else}
+						<p style="color: white;">Šiuo metu produktų nėra. Pabandykite vėliau.</p>
 						{/each}
 					</div>
 				</div>
@@ -125,4 +161,5 @@
 	.columns {
 		color: white;
 	}
+
 </style>
