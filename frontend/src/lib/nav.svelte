@@ -1,8 +1,6 @@
 <script>
 	import 'bulma/css/bulma.min.css';
-	import { fade } from 'svelte/transition';
 	import { fly } from 'svelte/transition';
-	import { slide } from 'svelte/transition';
 
 	let kategorijos = new Map();
 
@@ -61,14 +59,14 @@
 
 	<div id="navbarBasicExample" class="navbar-menu" class:is-active={burger}>
 		<div class="navbar-start">
-			{#each Object.entries(kategorijos) as [kat, attrs]}
+			{#each Object.entries(kategorijos) as [sub, sattrs]}
 				<div class="navbar-item has-dropdown is-hoverable">
 					<nav class="navbar" role="navigation" aria-label="dropdown navigation">
 						<div class="navbar-item has-dropdown" transition:fly={{ y: -200, duration: 1500 }}>
-							<a class="navbar-link" href="/produktai/{kat}">{kat}</a>
+							<a class="navbar-link" href="/produktai/{sattrs['slug']}">{sub}</a>
 							<div class="navbar-dropdown">
-								{#each Object.entries(attrs['kategorijos']) as [kat, attrs]}
-									<a class="navbar-item" href="/produktai/{kat}">{kat}</a>
+								{#each Object.entries(sattrs['kategorijos']) as [kat, kattrs]}
+									<a class="navbar-item" href="/produktai/{kattrs['slug']}">{kat}</a>
 								{/each}
 							</div>
 						</div>
