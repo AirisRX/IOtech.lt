@@ -26,7 +26,7 @@ function toggleNotification(text) {
     notification = text;
     setInterval(() => {
         notification = null;
-    }, 3000);
+    }, 2000);
 }
 </script>
 
@@ -34,7 +34,7 @@ function toggleNotification(text) {
 	{#if notification}
 			<div
 				class="notification has-background-white has-text-primary has-text-weight-bold"
-				style="position: fixed; top: 15px; left: 15px; display:inline-block; margin-top: 75px;"
+				style="position: fixed; top: 15px; left: 15px; display:inline-block; margin-top: 75px; z-index: 10;"
 			>
 				<p>{notification}</p>
 			</div>
@@ -47,7 +47,6 @@ function toggleNotification(text) {
             <div class="column">
               <p class="bd-notification is-info">
                 <figure class="image" style="width: 512px; height: 512px;">
-                  
                     {#if produktai && produktai[0]}
                     <img src="{produktai[0]['img']}" alt="Produktas" style="border-radius: 5px;" />
                     {/if}
@@ -72,13 +71,12 @@ function toggleNotification(text) {
                     {/if}
                   </p>
                 </div>
-                <button class="button is-primary is-rounded">
+                <span on:click={() => toggleNotification('Jūsų prekė buvo pridėta į krepšelį.')}>
+                  <button class="button is-primary is-rounded">
                     <span class="icon is-left"><i class="fas fa-shopping-bag" /></span>
-                    <span
-                        on:click={() => toggleNotification('Jūsų prekė buvo pridėta į krepšelį.')}
-                        >Į krepšelį</span
-                    >
-                </button>
+                    <span>Į krepšelį</span>
+                  </button>
+                </span>
               </div>
             </div>
           </div>
