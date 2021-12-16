@@ -4,7 +4,7 @@ from flask_restful import Api
 
 from api.auth import Email, Register, Login
 
-from api.product import CategoryAPI, ProductsAPI
+from api.product import CategoryAPI, ProductsAPI, ProductInfoAPI
 
 from database import db
 from settings import database_uri
@@ -32,3 +32,4 @@ api.add_resource(Login, '/auth/login')
 api.add_resource(Email, '/auth/email')
 api.add_resource(CategoryAPI, '/product/category')
 api.add_resource(ProductsAPI, '/product/products')
+api.add_resource(ProductInfoAPI, '/product/productinfo')
