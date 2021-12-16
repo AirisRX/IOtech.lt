@@ -101,7 +101,7 @@ class ProductInfoAPI(Resource):
         results["count"] = prod.count
         results["category"] = res.name
         if prod.img:
-            results["img"] = prod.img
+            results["img"] = "http://localhost:5000/img/" + prod.img
 
         print(results)
 
