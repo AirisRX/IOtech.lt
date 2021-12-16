@@ -125,9 +125,11 @@
 						{#each produktai as produktas}
 							<div class="tile is-parent is-3">
 								<article class="tile is-child notification is-info" style="padding-right: 24px;">
-									<p class="title" style="height: 100px;">{produktas['brand']} {produktas['model']}</p>
+									<a class="title" style="height: 100px;" href="/produktai/{produktas['id']}">{produktas['brand']} {produktas['model']}</a>
 									<figure class="image">
+										<a href="/produktai/{produktas['id']}">
 										<img src={produktas['img']} alt="Produktas" style="border-radius: 5px;" />
+										</a>
 										<div class="columns">
 											<div class="column">
 												<p class="subtitle">{produktas['cost']}€</p>

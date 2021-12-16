@@ -5,7 +5,7 @@ let produktai = [];
 
 async function getProducts() {
     try {
-        const res = await fetch('http://localhost:5000/product/products?slug=nesiojami_kompiuteriai');
+        const res = await fetch('http://localhost:5000/product/productinfo?pid=');
         const text = await res.text();
         produktai = JSON.parse(text);
         console.log(produktai);
@@ -47,7 +47,8 @@ function toggleNotification(text) {
             <div class="column">
               <p class="bd-notification is-info">
                 <figure class="image" style="width: 512px; height: 512px;">
-                    {#if produktai[0]}
+                  
+                    {#if produktai && produktai[0]}
                     <img src="{produktai[0]['img']}" alt="Produktas" style="border-radius: 5px;" />
                     {/if}
                   </figure>
@@ -56,7 +57,7 @@ function toggleNotification(text) {
 
             <div class="column">
               <h1 class="title" style="margin-bottom: 50px;">
-                  {#if produktai[0]}
+                {#if produktai && produktai[0]}
                 {produktai[0]['brand']} {produktai[0]['model']}
                 {/if}
               </h1>
@@ -66,7 +67,7 @@ function toggleNotification(text) {
                 </div>
                 <div class="column">
                   <p class="bd-notification is-danger">Kaina:
-                    {#if produktai[0]}
+                    {#if produktai && produktai[0]}
                     {produktai[0]['cost']}€
                     {/if}
                   </p>
