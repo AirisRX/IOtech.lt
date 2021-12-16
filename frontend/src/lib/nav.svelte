@@ -15,14 +15,27 @@
 		}
 	}
 
+let search = null
+
+	async function searching()
+	{
+		try{
+			const res = await fetch(`http://localhost:5000/product/products?name=${search}`);
+			const text = await res.text();
+			search = JSON.parse(text);
+		} catch (err) 
+		{
+			console.log(err);
+		}
+	}
+
 	getCategories();
 
 	let burger = false;
 
-	function openPage()
-	{
-		
-	}
+	const onKeyPress = e => {
+    if (e.charCode === 13) window.location.href = "/search/"+search;
+  };
 </script>
 
 <nav
@@ -73,8 +86,6 @@
 					</nav>
 				</div>
 			{/each}
-
-			<!-- <a class="navbar-item" href="/about">Apie mus</a> -->
 		</div>
 	</div>
 	
@@ -82,10 +93,10 @@
 		<div class="navbar-item">
 			<div class="field has-addons">
 				<div class="control is-rounded">
-				  <input class="input is-rounded" type="text" placeholder="Paieška" on:change="{openPage}">
+				  <input class="input is-rounded" type="text" placeholder="Paieška" bind:value="{search}" on:click="{search}" on:keypress="{onKeyPress}">
 				</div>
 				<div class="control">
-				  <a class="button is-primary is-rounded" href="/search">
+				  <a class="button is-primary is-rounded" href="/search/{search}">
 					<span class="icon"><i class="fas fa-search" /></span>
 				  </a>
 				</div>
