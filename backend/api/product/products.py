@@ -15,7 +15,7 @@ class ProductsAPI(Resource):
         slug = request.args.get('slug')
         name = request.args.get('name')
 
-        q = db.session.query(Comp.id, Brand.name.label("brand"), CompSI.model, Product.cost,
+        q = db.session.query(Product.id, Brand.name.label("brand"), CompSI.model, Product.cost,
                              Product.count, CompIMG.url.label("img")).select_from(Category)
         if slug:
             q = q.filter(Category.slug == slug)
