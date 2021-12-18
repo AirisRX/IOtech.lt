@@ -11,24 +11,8 @@
     let email;
     let password;
     let submit_message = null;
-    let problem = null;
 
     async function login() {
-
-        if (!email)
-        {
-            problem = {message: "Prašome užpildyti el. pašto adresą", field: "email"}
-            return;
-        }
-
-        if (!password)
-        {
-            problem = {message: "Prašome užpildyti slaptažodį", field: "password"}
-            return;
-        }
-
-        problem = null;
-
         try {
             const res = await fetch('http://localhost:5000/auth/login', {
                 method: 'POST',
@@ -40,8 +24,9 @@
                     'Content-Type': 'application/json'
                 }
             }) 
-            const { message } = JSON.parse(await res.text())
-            if (res.status == 200) {
+            const { message, session_id } = JSON.parse(await res.text())
+            if (res.status === 200) {
+				document.cookie = `session_id=${session_id}`
                 submit_message = {
                     message,
                     success: true
@@ -55,40 +40,32 @@
         } catch (err) {
             console.log(err)
         }
-
     }
-
 </script>
 
 <div class="field">
-	<label class="label">El. pašto adresas:</label>
+	<label class="label">E-mail</label>
 	<div class="control has-icons-right">
-		<input class="input" class:is-danger={problem && problem["field"] == "email"} type="email" bind:value={email} />
+		<input class="input" type="email" bind:value={email} />
 		<span class="icon is-small is-right">
 			<i />
 		</span>
 	</div>
 </div>
-{#if problem && problem["field"] == "email"}
-<p class="help is-danger">{problem["message"]}</p>
-{/if}
 
 <div class="field">
-	<label class="label">Slaptažodis:</label>
+	<label class="label">Password</label>
 	<div class="control has-icons-right">
-		<input class="input" class:is-danger={problem && problem["field"] == "password"} type="password" bind:value={password} />
+		<input class="input" type="password" bind:value={password} />
 		<span class="icon is-small is-right">
 			<i />
 		</span>
 	</div>
 </div>
-{#if problem && problem["field"] == "password"}
-<p class="help is-danger">{problem["message"]}</p>
-{/if}
 
 <div class="field">
 	<div class="control">
-		<button class="button is-success" on:click={login}>Prisijungti</button>
+		<button class="button is-success" on:click={login}>Submit</button>
 	</div>
 </div>
 {#if submit_message}
