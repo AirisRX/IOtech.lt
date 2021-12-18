@@ -3,7 +3,6 @@
     import {fly} from 'svelte/transition';
 
     export let account = null;
-    console.log(account)
 
     let kategorijos = new Map();
 
@@ -19,16 +18,6 @@
     }
 
     let search = null
-
-    async function searching() {
-        try {
-            const res = await fetch(`http://localhost:5000/product/products?name=${search}`);
-            const text = await res.text();
-            search = JSON.parse(text);
-        } catch (err) {
-            console.log(err);
-        }
-    }
 
     getCategories();
 
