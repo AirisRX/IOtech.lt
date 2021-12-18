@@ -6,7 +6,7 @@ import hashlib
 
 
 def handle_session(data):
-    user = db.session.query(User.name, User.session_id).filter_by(session_id=data['session_id']).first()
+    user = db.session.query(User.name, User.email, User.session_id).filter_by(session_id=data['session_id']).first()
 
     if not user:
         return {"message": "Neteisingas sesijos id arba el.paštas"}
