@@ -1,20 +1,8 @@
 <script context="module">
     export async function load({session}) {
-        console.log(session.authenticated)
-        if (!session.authenticated) {
-            return {
-                props: {
-                    account: null
-                }
-            }
-        }
-
         return {
             props: {
-                account: {
-                    email: session.email,
-                    name: session.name
-                }
+                account: session.account
             }
         }
     }
@@ -22,14 +10,13 @@
 
 <script>
     export let account;
-    console.log(account)
 
     import Nav from "$lib/nav.svelte"
     import Footer from "$lib/footer.svelte"
 </script>
 
 <main>
-    <Nav/>
+    <Nav account="{account}"/>
     
     <nav class="breadcrumb is-right" aria-label="breadcrumbs">
         <ul>

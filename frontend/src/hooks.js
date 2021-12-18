@@ -1,11 +1,14 @@
 import * as cookie from 'cookie'
 
 export async function getSession(request) {
+    console.log("test")
+
     const cookies = cookie.parse(request.headers.cookie || '')
 
     if (!cookies.session_id) {
+        console.log("no cookie")
         return {
-            authenticated: false
+            account: false
         }
     }
 
@@ -19,20 +22,20 @@ export async function getSession(request) {
                 'Content-Type': 'application/json'
             }
         })
-        const { message, email, name } = JSON.parse(await res.text())
+        console.log(res.status)
         if (res.status === 200) {
+            const { message, email, name } = JSON.parse(await res.text())
             console.log(message)
             return {
-                authenticated: true,
-                email,
-                name
+                account: {email, name}
             }
         }
     } catch (err) {
+        console.log("Klaida")
         console.log(err)
     }
 
     return {
-        authenticated: false
+        account: false
     }
 }
