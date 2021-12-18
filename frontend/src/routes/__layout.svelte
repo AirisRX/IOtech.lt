@@ -18,7 +18,7 @@
 </script>
 
 <main>
-    <Nav/>
+    <Nav bind:account="{account}"/>
 
 <div style="margin-top: 50px;">.</div>
     
