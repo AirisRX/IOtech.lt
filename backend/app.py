@@ -2,7 +2,7 @@ from flask import Flask, send_from_directory
 from flask_cors import CORS
 from flask_restful import Api
 
-from api.auth import Email, Register, Login
+from api.auth import Register, Login
 
 from api.product import CategoryAPI, ProductsAPI, ProductInfoAPI
 
@@ -29,7 +29,6 @@ api = Api(app)
 
 api.add_resource(Register, '/auth/register')
 api.add_resource(Login, '/auth/login')
-api.add_resource(Email, '/auth/email')
 api.add_resource(CategoryAPI, '/product/category')
 api.add_resource(ProductsAPI, '/product/products')
 api.add_resource(ProductInfoAPI, '/product/productinfo')
