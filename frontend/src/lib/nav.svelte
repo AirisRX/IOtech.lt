@@ -112,7 +112,7 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button is-primary is-rounded" href="/auth">
+                    <a class="button is-primary is-rounded" href="/user/">
 					<span class="icon">
 						<i class="fas fa-user"/>
 					</span>

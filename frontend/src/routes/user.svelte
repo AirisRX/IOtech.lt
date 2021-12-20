@@ -1,5 +1,19 @@
+<script context="module">
+ export async function load({session}) {
+        if (!session.account) return {
+            status: 401,
+            error: "Unauthorised"
+        }
+        return {
+            props: {
+                account: session.account
+            }
+        }
+    }
+</script>
+
 <script>
-  
+    export let account;
 </script>
 
 <main>
@@ -19,8 +33,8 @@
                               </figure>
                             </div>
                             <div class="media-content">
-                              <p class="title is-5 user">Vartotojas</p>
-                              <p class="subtitle is-6">Paštas</p>
+                              <p class="title is-5 user">{account.name}</p>
+                              <p class="subtitle is-6">{account.email}</p>
                             </div>
                           </div>
                       
