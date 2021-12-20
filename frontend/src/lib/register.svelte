@@ -67,6 +67,7 @@
             const {message, session_id} = JSON.parse(await res.text())
             if (res.status === 200) {
                 document.cookie = `session_id=${session_id}`
+                window.location.href = "/"
                 submit_message = {
                     message,
                     success: true
